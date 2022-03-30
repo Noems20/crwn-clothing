@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from 'react-router-dom';
 
-function App() {
+// ROUTES
+import Home from './routes/Home/Home.component';
+import Navigation from './routes/Navigation/Navigation.component';
+import SignIn from './routes/SignIn/SignIn.component';
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/" element={<Navigation />}>
+        {/* The nested routes are relative to the parent route */}
+        <Route index element={<Home />} />
+        <Route path="shop" element={<h1>Store</h1>} />
+        <Route path="sign-in" element={<SignIn />} />
+      </Route>
+    </Routes>
   );
-}
+};
 
 export default App;
