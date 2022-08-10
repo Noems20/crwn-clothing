@@ -22,7 +22,7 @@ import {
   LogoContainer,
   NavLinks,
   NavLink,
-} from './Navigation.styles.js';
+} from './Navigation.styles';
 
 const Navigation = () => {
   const currentUser = useSelector(selectCurrentUser);
